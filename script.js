@@ -68,6 +68,7 @@ function restart()
     card.classList.remove('flip');
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
+    cards.forEach(card => card.addEventListener('click', flipCard));
   }
 );
 resetBoard();
