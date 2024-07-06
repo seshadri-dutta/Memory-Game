@@ -53,6 +53,7 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
+
 (function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
@@ -60,4 +61,16 @@ function resetBoard() {
   });
 })();
 
+function restart()
+{
+  console.log('Hi');
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+    card.classList.remove('flip');
+  });
+}
+
 cards.forEach(card => card.addEventListener('click', flipCard));
+const restartButton = document.getElementById("restartButton");
+restartButton.addEventListener("click",restart);
