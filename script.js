@@ -63,12 +63,14 @@ function resetBoard() {
 
 function restart()
 {
-  console.log('Hi');
+ // console.log('Hi');
   cards.forEach(card => {
+    card.classList.remove('flip');
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
-    card.classList.remove('flip');
-  });
+  }
+);
+resetBoard();
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
